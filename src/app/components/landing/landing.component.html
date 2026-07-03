@@ -1,0 +1,218 @@
+<div class="landing-page">
+  <div class="video-container">
+    <video class="background-video" autoplay muted loop playsinline>
+      <source src="./assets/videos/home.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <app-navbar></app-navbar>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text animate__animated animate__fadeInUp">
+        <h1 class="hero-subtitle m-0">El nuevo estándar de</h1>
+        <h2 class="hero-title m-0">SEGURIDAD</h2>
+        
+        <p class="hero-description animate__animated animate__backInUp">Descubre <span style="color: #0099ff;">nuestros Servicios</span></p>
+        
+        <div class="w-full flex justify-content-center animate__animated animate__backInUp">
+            <div class="hero-buttons">
+              <button class="btn btn-primary" (click)="scrollToExplore()">
+                Explorar Ahora
+              </button>
+              <button class="btn btn-link" (click)="downloadBrochure()">
+                Descargar Brochure
+              </button>
+            </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- Nuestros Servicios -->
+  <section class="services-section">
+    <div class="services-header">
+      <h3 class="services-subtitle">Descubre más de</h3>
+      <h2 class="services-title">Nuestros Servicios</h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-image">
+          <img src="./assets/img/monitoreo_ia.png" alt="Monitoreo remoto con IA" />
+        </div>
+        <p class="service-name">Monitoreo remoto<br />con IA</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="./assets/img/torres_estructura.png" alt="Torres y Estructuras" />
+        </div>
+        <p class="service-name">Torres y<br />Estructuras</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="./assets/img/rastreo_gps.png" alt="Rastreo GPS" />
+        </div>
+        <p class="service-name">Rastreo<br />GPS</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="./assets/img/paneles_solares.png" alt="Paneles Solares" />
+        </div>
+        <p class="service-name">Paneles<br />Solares</p>
+      </div>
+    </div>
+
+    <button class="btn btn-primary services-cta">Ver Más</button>
+  </section>
+
+  <!-- Zentinel -->
+  <section class="zentinel-section">
+    <div class="zentinel-content">
+      <div class="zentinel-info">
+        <!-- <img class="zentinel-logo" src="./assets/img/zentinel_logo.svg" alt="Zentinel" /> -->
+        <img class="zentinel-powered" style="height: 126px; width: 543px;"
+          src="./assets/img/zentinel_powered.png" alt="Powered by TeleArseg" />
+
+        <p class="zentinel-description">
+          Reportería digital<br />para operaciones críticas
+        </p>
+
+        <div class="zentinel-buttons">
+          <button class="btn zentinel-btn-primary">Explora Zentinel</button>
+          <button class="btn zentinel-btn-outline" (click)="downloadBrochure()">Descargar Brochure</button>
+        </div>
+      </div>
+
+      <div class="zentinel-visual">
+        <img src="./assets/img/zentinel_phone.png" alt="Zentinel App" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluciones por sector -->
+  <section class="sectors-section">
+    <p class="sectors-intro">
+      Telearseg brinda soluciones personalizadas de acuerdo a las necesidades de
+      cada cliente, con servicios de
+      <span class="highlight">Monitoreo remoto, Videovigilancia, Seguridad Electrónica y mucho más.</span>
+    </p>
+
+    <div class="sectors-grid">
+      <div class="sectors-lead">
+        <i class="pi pi-arrow-down-right sectors-arrow"></i>
+        <h3 class="sectors-lead-text">Soluciones de Seguridad Electrónica para cada rubro.</h3>
+      </div>
+
+      <div class="sector-card sector-card--active">
+        <i class="pi pi-shopping-bag sector-icon"></i>
+        <p class="sector-title">Sector<br />camaronero</p>
+      </div>
+
+      <div class="sector-card">
+        <i class="pi pi-apple sector-icon"></i>
+        <p class="sector-title">Sector<br />Bananero</p>
+      </div>
+
+      <div class="sector-card">
+        <i class="pi pi-cog sector-icon"></i>
+        <p class="sector-title">Sector<br />Industrial</p>
+      </div>
+
+      <div class="sector-card">
+        <i class="pi pi-building sector-icon"></i>
+        <p class="sector-title">Haciendas</p>
+      </div>
+
+      <div class="sector-card">
+        <i class="pi pi-home sector-icon"></i>
+        <p class="sector-title">Urbanizaciones</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section class="projects-section">
+    <div class="projects-content">
+      <h3 class="projects-subtitle">Conoce nuestros</h3>
+      <h2 class="projects-title">PROYECTOS</h2>
+      <button class="btn projects-cta">Ver Más</button>
+    </div>
+  </section>
+
+  <!-- Nosotros / Cobertura -->
+  <section class="about-section">
+    <img class="about-map" src="./assets/img/mapa.svg" alt="" aria-hidden="true" />
+
+    <div class="about-content">
+      <h2 class="about-heading">
+        Nuestra prioridad es la<br />
+        <span class="highlight">seguridad</span> de su empresa.
+      </h2>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <p class="stat-label">Monitoreamos</p>
+          <p class="stat-number">+22K</p>
+          <p class="stat-caption">Hectáreas</p>
+        </div>
+
+        <div class="stat-card">
+          <p class="stat-label">Hemos instalado</p>
+          <p class="stat-number">+10K</p>
+          <p class="stat-caption">Cámaras</p>
+        </div>
+
+        <div class="stat-card">
+          <p class="stat-label">Contamos con</p>
+          <p class="stat-number">+350</p>
+          <p class="stat-caption">Clientes Globales</p>
+        </div>
+      </div>
+
+      <div class="coverage">
+        <h3 class="coverage-subtitle">Nuestra Cobertura</h3>
+        <h2 class="coverage-title">NACIONAL E INTERNACIONAL</h2>
+        <img class="coverage-flags" src="./assets/img/banderas.png" alt="Banderas de cobertura" />
+      </div>
+
+      <button class="btn about-cta">
+        <span class="about-cta-top">Conoce Más</span>
+        <span class="about-cta-bottom">Sobre Nosotros</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Contáctanos -->
+  <section class="contact-section">
+    <h2 class="contact-title">CONTÁCTANOS</h2>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="pi pi-whatsapp contact-icon"></i>
+        <p class="contact-main">+593 95 978 8833</p>
+      </div>
+
+      <div class="contact-card">
+        <i class="pi pi-map-marker contact-icon"></i>
+        <p class="contact-main">Urdesa Central</p>
+        <p class="contact-sub">Av. Las Aguas 1111<br />entre Jiguas y Laureles</p>
+      </div>
+
+      <div class="contact-card">
+        <i class="pi pi-envelope contact-icon"></i>
+        <p class="contact-main">infotelearseg.net</p>
+      </div>
+    </div>
+
+    <p class="contact-footer">
+      Copyright © TeleArseg 2026 | Realizado por el querido equipo de marketing Telearseg
+    </p>
+  </section>
+</div>

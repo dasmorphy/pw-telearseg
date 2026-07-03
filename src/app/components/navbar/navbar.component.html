@@ -1,0 +1,37 @@
+<header class="navbar" [class.scroll]="isMenuOpen">
+  <nav class="navbar-container">
+    <!-- Logo -->
+    <div  class="navbar-logo ml-5">
+      <img width="200px" height="110px" src="./assets/logo_telearseg.svg" alt="logo">
+    </div>
+
+    <!-- Menu Toggle for Mobile -->
+    <div class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul class="navbar-menu" [class.active]="isMenuOpen">
+      <li *ngFor="let item of navItems" class="nav-item">
+        <a [href]="item.href" class="nav-link" (click)="closeMenu()">
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Social Media Icons -->
+      <div class="social-icons mr-5">
+        <a href="https://facebook.com" target="_blank" class="social-link" title="Facebook">
+          <i class="pi pi-facebook"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter">
+          <i class="pi pi-twitter"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-link" title="LinkedIn">
+          <i class="pi pi-linkedin"></i>
+        </a>
+      </div>
+  </nav>
+</header>
