@@ -1,0 +1,248 @@
+<div class="camaras-page">
+  <app-navbar></app-navbar>
+
+  <section class="carousel-section">
+    <button
+      type="button"
+      class="carousel-arrow carousel-arrow--prev"
+      (click)="prevSlide()"
+      aria-label="Anterior"
+    >
+      <i class="pi pi-chevron-left"></i>
+    </button>
+
+    <div class="carousel-viewport">
+      <div
+        class="carousel-track"
+        [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+      >
+        <!-- ===== img1 · Nuestras Cámaras ===== -->
+        <div class="carousel-slide slide-camaras">
+          <div class="slide-inner">
+            <div class="camaras-text">
+              <h2 class="camaras-title">
+                <span class="camaras-title-top">Cámaras</span>
+                <span class="camaras-title-highlight">Inteligentes</span>
+              </h2>
+
+              <p class="camaras-description">
+                Implementamos cámaras inteligentes equipadas con IA, diseñadas
+                para detectar, analizar y responder en tiempo real a situaciones
+                de riesgo; permitiendo el reconocimiento de patrones,
+                identificación de personas y vehículos, y monitoreo automatizado,
+                optimizando la seguridad y reduciendo la necesidad de
+                intervención manual.
+              </p>
+
+              <p class="camaras-market">
+                Junto a los mejores <span>del mercado</span>
+              </p>
+
+              <div class="camaras-logos">
+                <img src="./assets/img/hik_dahua_logos_01.svg" alt="Hikvision y Dahua" />
+              </div>
+            </div>
+
+            <div class="camaras-visual">
+              <img src="./assets/img/camaras_seccion.png" alt="Nuestras Cámaras" />
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== img2 · Tecnología ANPR ===== -->
+        <div class="carousel-slide slide-anpr">
+          <div class="slide-inner-tech">
+            <div class="anpr-text-tech">
+              <div>
+                <h2 class="anpr-title">
+                  <span class="anpr-title-top">Tecnología</span>
+                  <span class="anpr-title-highlight">ANPR</span>
+                </h2>
+  
+                <p class="anpr-description">
+                  Gracias a la integración de tecnologías OCR y cámaras de video de
+                  alta definición, el ANPR captura imágenes de las placas numéricas
+                  y las convierte en caracteres alfanuméricos en menos de un
+                  segundo.
+                </p>
+                <p class="anpr-description">
+                  Esto nos permite comparar los datos con bases de datos de
+                  vehículos registrados para tomar acciones inmediatas, como
+                  levantar barreras o activar alarmas.
+                </p>
+              </div>
+            </div>
+
+            <div class="anpr-visual-tech">
+              <img src="./assets/img/tecnologia_anpr.png" alt="Tecnología ANPR" />
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== img3 · Reconocimiento Facial ===== -->
+        <div class="carousel-slide slide-facial">
+          <div class="slide-inner">
+            <div class="facial-text">
+              <h2 class="facial-title">
+                <span class="facial-title-top">Reconocimiento</span>
+                <span class="facial-title-highlight">FACIAL</span>
+              </h2>
+
+              <ul class="facial-list">
+                <li class="facial-item" *ngFor="let feature of facialFeatures">
+                  <i class="pi pi-check facial-check"></i>
+                  <span class="facial-feature">{{ feature }}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="facial-visual">
+              <img src="./assets/img/reconocimiento_facial.png" alt="Reconocimiento Facial" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="carousel-arrow carousel-arrow--next"
+      (click)="nextSlide()"
+      aria-label="Siguiente"
+    >
+      <i class="pi pi-chevron-right"></i>
+    </button>
+
+    <div class="carousel-dots">
+      <button
+        type="button"
+        *ngFor="let dot of [].constructor(totalSlides); let i = index"
+        class="carousel-dot"
+        [class.active]="currentSlide === i"
+        (click)="goToSlide(i)"
+        [attr.aria-label]="'Ir al diseño ' + (i + 1)"
+      ></button>
+    </div>
+  </section>
+
+  <!-- ===== Cámaras Térmicas ===== -->
+  <section class="termicas-section">
+    <div class="termicas-inner">
+      <div class="termicas-visual">
+        <img src="./assets/img/camaraste_termicas.png" alt="Cámaras Térmicas" />
+      </div>
+
+      <div class="termicas-text">
+        <h2 class="termicas-title">
+          <span class="termicas-title-top">Cámaras</span>
+          <span class="termicas-title-highlight">Térmicas</span>
+        </h2>
+
+        <p class="termicas-description">
+          Instalamos sistemas de monitoreo avanzados con tecnología que detecta
+          la radiación infrarroja emitida por los objetos, permitiendo visualizar
+          diferencias de temperatura en tiempo real.
+        </p>
+
+        <p class="termicas-description">
+          Esta tecnología es ideal para la detección temprana de anomalías,
+          prevención de riesgos y vigilancia en condiciones de baja visibilidad o
+          total oscuridad, garantizando un control más preciso y una respuesta
+          oportuna en diversos entornos operativos.
+        </p>
+      </div>
+    </div>
+
+    <div class="termicas-cards">
+      <article class="termicas-card termicas-card--featured">
+        <img
+          class="termicas-card-icon"
+          src="./assets/img/cruce_linea_mesa.svg"
+          alt="Cruce de líneas"
+        />
+        <h3 class="termicas-card-title">Cruce de<br />líneas</h3>
+      </article>
+
+      <article class="termicas-card">
+        <img
+          class="termicas-card-icon"
+          src="./assets/img/cobertura_360.svg"
+          alt="Cobertura 360°"
+        />
+        <h3 class="termicas-card-title">Cobertura<br />360°</h3>
+      </article>
+
+      <article class="termicas-card">
+        <img
+          class="termicas-card-icon"
+          src="./assets/img/prevencion_incendios.svg"
+          alt="Prevención de incendios"
+        />
+        <h3 class="termicas-card-title">Prevención<br />de incendios</h3>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Telearseg en Acción ===== -->
+  <section class="accion-section">
+    <h2 class="accion-title">
+      <span class="accion-title-top">Telearseg</span>
+      <span class="accion-title-highlight">EN ACCIÓN</span>
+    </h2>
+
+    <div class="accion-video">
+      <video
+        src="./assets/img/video_telearseg_accion.mp4"
+        autoplay
+        controls
+        loop
+        playsinline
+      ></video>
+    </div>
+  </section>
+
+  <section class="infra-section">
+    <div class="infra-header">
+      <h2 class="infra-title">
+        Galería
+      </h2>
+    </div>
+
+    <div class="infra-carousel">
+      <button
+        type="button"
+        class="infra-arrow infra-arrow--prev"
+        (click)="prevInfraSlide()"
+        aria-label="Anterior"
+      >
+        <i class="pi pi-caret-left"></i>
+      </button>
+
+      <div class="infra-viewport">
+        <div
+          class="infra-track"
+          [style.transform]="'translateX(-' + infraIndex * 100 + '%)'"
+        >
+          <div class="infra-slide" *ngFor="let slide of infraSlides">
+            <div class="infra-card" *ngFor="let item of slide">
+              <div class="infra-media">
+                <img [src]="item.image" [alt]="item.title" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="infra-arrow infra-arrow--next"
+        (click)="nextInfraSlide()"
+        aria-label="Siguiente"
+      >
+        <i class="pi pi-caret-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+</div>

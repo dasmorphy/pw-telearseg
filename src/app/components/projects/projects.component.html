@@ -1,0 +1,129 @@
+<div class="projects-page">
+  <app-navbar></app-navbar>
+
+  <!-- ===== img1 · Seguridad que Protege Tu Producción ===== -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        <span class="hero-title-top">Seguridad que</span>
+        <span class="hero-title-bottom">
+          <span class="hero-title-highlight">Protege</span> Tu Producción
+        </span>
+      </h1>
+
+      <p class="hero-description">
+        En Telearseg, ofrecemos soluciones tecnológicas personalizadas y
+        confiables, integrando sistemas avanzados como cámaras térmicas para una
+        detección precisa, garantizando eficiencia, conectividad y autonomía
+        energética.
+      </p>
+
+      <div class="hero-buttons">
+        <button type="button" class="btn btn-primary" routerLink="/camaras">
+          Ver Cámaras
+        </button>
+        <button type="button" class="btn btn-link" routerLink="/servicios">
+          Ver Soluciones
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== img1 · Nuestros Clientes ===== -->
+  <!-- <section class="clients-section" id="proyectos">
+    <h2 class="clients-title">Nuestros Clientes</h2>
+
+    <div class="solutions-grid">
+      <div
+        *ngFor="let sector of sectors"
+        [class.active]="activeSector === sector.id"
+        class="solution-card"
+      >
+        <i class="pi pi-arrow-down-right solution-arrow"></i>
+        <span class="clients-tab-label">{{ sector.tab }}</span>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="solutions-section" id="servicios">
+    <div class="solutions-header">
+      <h2 class="solutions-title">Nuestros Clientes</h2>
+    </div>
+
+    <div class="solutions-grid">
+      <div
+        *ngFor="let sector of sectors"
+        (click)="navigateRoute(sector.id)"
+        class="solution-card"
+      >
+        <i class="pi pi-arrow-down-right solution-arrow"></i>
+        <p class="solution-label" [innerHTML]="sector.tab"></p>
+        <!-- <span class="clients-tab-label">{{ sector.tab }}</span> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== img2 → img11 · Sectores y clientes ===== -->
+  <section
+    class="sector-section"
+    *ngFor="let sector of sectors"
+    [id]="sector.id"
+    [class.sector-section--map]="sector.mapBackground"
+  >
+    <div class="sector-banner">
+      <div class="sector-text">
+        <h2 class="sector-title">
+          <span class="sector-title-top" *ngIf="sector.kicker">{{ sector.kicker }}</span>
+          <span class="sector-title-highlight">{{ sector.title }}</span>
+        </h2>
+
+        <p class="sector-description">{{ sector.description }}</p>
+
+        <button
+          type="button"
+          class="btn btn-link sector-brochure"
+          *ngIf="sector.brochure !== undefined"
+          (click)="downloadBrochure(sector)"
+        >
+          Descargar brochure
+        </button>
+      </div>
+
+      <div class="sector-visual">
+        <img *ngIf="sector.image" [src]="sector.image" [alt]="sector.title" />
+
+        <!-- img11 · Banderas recortadas del sprite banderas.png -->
+        <div class="sector-flags" *ngIf="sector.flags?.length">
+          <span
+            class="sector-flag"
+            *ngFor="let flag of sector.flags"
+            [style.background-position-x]="flag.position"
+            [title]="flag.name"
+            [attr.aria-label]="flag.name"
+          ></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- img3 · img4 · img7 · img9 · img10 · img11 · Logos de clientes -->
+    <div class="logo-group" *ngFor="let group of sector.groups">
+      <h3 class="logo-group-title">{{ group.title }}</h3>
+      <p class="logo-group-subtitle">{{ group.subtitle }}</p>
+
+      <div class="logo-grid" *ngIf="visibleLogos(group).length">
+        <div class="logo-card" *ngFor="let logo of visibleLogos(group)">
+          <img [src]="logo.image" [alt]="logo.name" />
+        </div>
+      </div>
+
+      <button type="button" class="logo-toggle" (click)="toggleGroup(group.id)">
+        <span class="logo-toggle-arrow" [class.down]="!isExpanded(group.id)"></span>
+        <span class="logo-toggle-label">
+          {{ isExpanded(group.id) ? 'Ver menos' : 'Ver más' }}
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+</div>

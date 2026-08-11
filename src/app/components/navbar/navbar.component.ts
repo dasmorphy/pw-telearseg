@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+interface NavItem {
+  label: string;
+  route?: string;
+  href?: string;
+}
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -12,10 +18,11 @@ import { RouterModule } from '@angular/router';
 export class NavbarComponent implements OnInit {
   isMenuOpen = false;
 
-  navItems = [
-    { label: 'Home', href: '#' },
-    { label: 'Servicios', href: '#servicios' },
-    { label: 'Proyectos', href: '#proyectos' },
+  navItems: NavItem[] = [
+    { label: 'Home', route: '/' },
+    { label: 'Servicios', route: '/servicios' },
+    { label: 'Zentinel', href: '/zentinel' },
+    { label: 'Proyectos', route: '/proyectos' },
     { label: 'Nosotros', href: '#nosotros' },
     { label: 'Contacto', href: '#contacto' }
   ];

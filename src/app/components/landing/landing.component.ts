@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
@@ -11,6 +11,57 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent {
+  images = [
+    '/assets/img/project_1.png',
+    '/assets/img/project_2.png',
+    '/assets/img/project_3.png',
+    '/assets/img/project_4.png',
+  ];
+
+  currentIndex = 0;
+  exitIndex = -1;
+  private interval: any;
+
+  constructor(private router: Router) {}
+  
+
+  ngOnInit(): void {
+    this.startCarousel();
+  }
+
+  ngOnDestroy(): void {
+    this.stopCarousel();
+  }
+
+  navigateRoute(route: string) {
+    this.router.navigate([route]);
+
+  }
+
+  private startCarousel(): void {
+    this.interval = setInterval(() => this.next(), 4000);
+  }
+
+  private stopCarousel(): void {
+    clearInterval(this.interval);
+  }
+
+  next(): void {
+    this.exitIndex = this.currentIndex;
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+
+    // Limpia el exitIndex después de la animación
+    setTimeout(() => this.exitIndex = -1, 800);
+  }
+
+  goTo(index: number): void {
+    if (index === this.currentIndex) return;
+    this.stopCarousel();
+    this.exitIndex = this.currentIndex;
+    this.currentIndex = index;
+    setTimeout(() => this.exitIndex = -1, 800);
+    this.startCarousel(); // reinicia el timer
+  }
   
   scrollToExplore() {
     // Scroll to next section - en el futuro agregaremos más secciones
@@ -21,4 +72,5 @@ export class LandingComponent {
     console.log('Descargando brochure...');
     // Aquí iría la lógica para descargar el brochure
   }
+
 }

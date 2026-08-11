@@ -1,0 +1,826 @@
+.camaras-page {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background: #030814;
+}
+
+/* ============ Carrusel (img1 · img2 · img3) ============ */
+.carousel-section {
+    position: relative;
+    z-index: 3;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    // padding: 6rem 4.5rem 5rem;
+
+    @media (max-width: 768px) {
+        padding: 6rem 3rem 4.5rem;
+    }
+}
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    min-height: calc(100vh - 11rem);
+    display: flex;
+    align-items: center;
+}
+
+.slide-inner {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        gap: 2.5rem;
+        text-align: center;
+    }
+}
+
+.slide-inner-tech {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        gap: 2.5rem;
+        text-align: center;
+    }
+}
+
+/* ---------- Flechas de navegación ---------- */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 132, 255, 0.12);
+    border: 1px solid rgba(46, 166, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+
+    i {
+        font-size: 1.6rem;
+        color: #2ea6ff;
+    }
+
+    &:hover {
+        transform: translateY(-50%) scale(1.12);
+        background: linear-gradient(135deg, #0a84ff 0%, #1fd6d1 100%);
+        box-shadow: 0 12px 30px rgba(10, 132, 255, 0.35);
+
+        i {
+            color: #04121f;
+        }
+    }
+
+    &--prev {
+        left: 0.75rem;
+    }
+
+    &--next {
+        right: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+        width: 42px;
+        height: 42px;
+
+        i {
+            font-size: 1.2rem;
+        }
+
+        &--prev {
+            left: 0.35rem;
+        }
+
+        &--next {
+            right: 0.35rem;
+        }
+    }
+}
+
+/* ---------- Indicadores (dots) ---------- */
+.carousel-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 1px solid rgba(46, 166, 255, 0.6);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease, width 0.25s ease;
+
+    &.active {
+        width: 34px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #0a84ff 0%, #1fd6d1 100%);
+        border-color: transparent;
+    }
+
+    &:hover:not(.active) {
+        background: rgba(46, 166, 255, 0.4);
+    }
+}
+
+/* ============ img1 · Nuestras Cámaras ============ */
+.slide-camaras {
+    background: radial-gradient(ellipse at 75% 45%, rgba(0, 90, 200, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 50%, #0a1a2e 0%, #030814 75%);
+}
+
+.camaras-text {
+    flex: 1;
+}
+
+.camaras-title {
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+
+    .camaras-title-top {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    .camaras-title-highlight {
+        font-size: 5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #0a84ff 0%, #1fd6d1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+        @media (max-width: 768px) {
+            font-size: 3.2rem;
+        }
+    }
+}
+
+.camaras-description {
+    max-width: 480px;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #c9d2dc;
+    margin: 0 0 2.5rem;
+    text-align: justify;
+
+    @media (max-width: 992px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 0.98rem;
+    }
+}
+
+.camaras-market {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 1.5rem;
+
+    span {
+        background: linear-gradient(135deg, #0a84ff 0%, #1fd6d1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1.15rem;
+    }
+}
+
+.camaras-logos {
+    display: flex;
+    width: 500px;
+    
+    @media (max-width: 992px) {
+        justify-content: center;
+    }
+
+    // img {
+    //     max-width: 340px;
+    //     width: 100%;
+    //     height: auto;
+    // }
+}
+
+.camaras-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        max-width: 620px;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+/* ============ img2 · Tecnología ANPR ============ */
+.slide-anpr {
+    background: #030814 url('/assets/img/tecnologia_anpr_fondo.svg') center right / cover no-repeat;
+}
+
+.anpr-text {
+    flex: 1;
+}
+
+.anpr-text-tech {
+    display: flex;
+    justify-content: end;
+    flex: 1;
+}
+
+.anpr-title {
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+
+    .anpr-title-top {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    .anpr-title-highlight {
+        font-size: 5.5rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        background: linear-gradient(135deg, #0a84ff 0%, #1fd6d1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+        @media (max-width: 768px) {
+            font-size: 3.4rem;
+        }
+    }
+}
+
+.anpr-description {
+    max-width: 470px;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #c9d2dc;
+    margin: 0 0 1.5rem;
+    text-align: justify;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 992px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 0.98rem;
+    }
+}
+
+.anpr-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        max-width: 640px;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.anpr-visual-tech {
+    display: flex;
+    margin-right: 4rem;
+    align-items: flex-end;
+    height: 100%;
+
+    img {
+        width: 100%;
+        // max-width: 640px;
+        height: 800px;
+        object-fit: contain;
+    }
+}
+
+/* ============ img3 · Reconocimiento Facial ============ */
+.slide-facial {
+    background: radial-gradient(ellipse at 80% 40%, rgba(0, 70, 170, 0.4) 0%, transparent 55%),
+        radial-gradient(ellipse at 30% 50%, #0a1226 0%, #030814 75%);
+}
+
+.facial-text {
+    flex: 1;
+}
+
+.facial-title {
+    margin: 0 0 3rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+
+    .facial-title-top {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    .facial-title-highlight {
+        font-size: 5.5rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        background: linear-gradient(135deg, #0a84ff 0%, #1fd6d1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+        @media (max-width: 768px) {
+            font-size: 3.4rem;
+        }
+    }
+}
+
+.facial-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    max-width: 420px;
+
+    @media (max-width: 992px) {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+}
+
+.facial-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.facial-check {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2ea6ff;
+    border: 2px solid #2ea6ff;
+    border-radius: 8px;
+    background: rgba(10, 132, 255, 0.1);
+}
+
+.facial-feature {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #ffffff;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+}
+
+.facial-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        max-width: 620px;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+/* ============ Cámaras Térmicas ============ */
+.termicas-section {
+    position: relative;
+    z-index: 3;
+    padding: 5rem 4.5rem 6rem;
+    color: #ffffff;
+    background: radial-gradient(ellipse at 35% 25%, rgba(0, 90, 200, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 50%, #0a1a2e 0%, #030814 78%);
+
+    @media (max-width: 768px) {
+        padding: 4rem 2rem 4.5rem;
+    }
+}
+
+.termicas-inner {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        gap: 2.5rem;
+        text-align: center;
+    }
+}
+
+.termicas-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        max-width: 560px;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.termicas-text {
+    flex: 1;
+}
+
+.termicas-title {
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+
+    .termicas-title-top {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    .termicas-title-highlight {
+        font-size: 5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #0a84ff 0%, #1fd6d1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+        @media (max-width: 768px) {
+            font-size: 3.2rem;
+        }
+    }
+}
+
+.termicas-description {
+    max-width: 480px;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #c9d2dc;
+    margin: 0 0 1.5rem;
+    text-align: justify;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 992px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 0.98rem;
+    }
+}
+
+.termicas-cards {
+    width: 100%;
+    max-width: 1300px;
+    margin: 10rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+.termicas-card {
+    padding: 2rem 2rem 2.25rem;
+    border-radius: 14px;
+    background: #0b1526;
+    border: 1px solid rgba(46, 166, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+        background: linear-gradient(135deg, #0a84ff 0%, #1fd6d1 100%);
+        border-color: transparent;
+    }
+
+}
+
+.termicas-card-icon {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.termicas-card-title {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #ffffff;
+}
+
+/* ============ Telearseg en Acción ============ */
+.accion-section {
+    position: relative;
+    z-index: 3;
+    padding: 4rem 4.5rem 6rem;
+    background: radial-gradient(ellipse at 50% 0%, rgba(0, 70, 170, 0.35) 0%, transparent 60%),
+        #030814;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        padding: 3rem 2rem 4.5rem;
+    }
+}
+
+.accion-title {
+    margin: 0 0 3rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+
+    .accion-title-top {
+        font-size: 2.6rem;
+        font-weight: 700;
+        color: #ffffff;
+
+        @media (max-width: 768px) {
+            font-size: 1.8rem;
+        }
+    }
+
+    .accion-title-highlight {
+        font-size: 3.4rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: #2ea6ff;
+
+        @media (max-width: 768px) {
+            font-size: 2.2rem;
+        }
+    }
+}
+
+.accion-video {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    video {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 6px;
+    }
+}
+
+
+.infra-section {
+    position: relative;
+    z-index: 3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    padding: 6rem 5%;
+    background: radial-gradient(ellipse at 25% 25%, rgba(0, 70, 170, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 50%, #071a2e 0%, #030814 75%);
+}
+
+.infra-header {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto 4rem;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+.infra-title {
+    font-size: 3.6rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.1;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #cfe0f5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @media (max-width: 768px) {
+        font-size: 2.4rem;
+    }
+}
+
+.infra-intro {
+    max-width: 470px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #c9d2dc;
+    margin: 0.6rem 0 0;
+    text-align: justify;
+}
+
+.infra-carousel {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        gap: 0.5rem;
+    }
+}
+
+.infra-arrow {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+
+    i {
+        font-size: 2.4rem;
+    }
+
+    &--prev i {
+        color: #9fb0c4;
+    }
+
+    &--next i {
+        color: #0a84ff;
+    }
+
+    &:hover {
+        transform: scale(1.15);
+    }
+
+    @media (max-width: 768px) {
+        width: 38px;
+        height: 38px;
+
+        i {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.infra-viewport {
+    flex: 1;
+    overflow: hidden;
+}
+
+.infra-track {
+    display: flex;
+    transition: transform 0.55s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.infra-slide {
+    flex: 0 0 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+        gap: 1rem;
+    }
+}
+
+.infra-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infra-media {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.infra-card-title {
+    margin: 1.5rem 0 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.3;
+
+    @media (max-width: 768px) {
+        font-size: 1.05rem;
+        margin-top: 1rem;
+    }
+}

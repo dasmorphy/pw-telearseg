@@ -1,0 +1,179 @@
+<div class="zentinel-page">
+    <app-navbar></app-navbar>
+
+    <section class="video-zentinel">
+        <div class="flex">
+            <video src="./assets/img/zentinel_intro.mp4" autoplay controls loop playsinline></video>
+
+        </div>
+    </section>
+
+
+    <section class="zentinel-section">
+
+        <div class="flex flex-column">
+
+            <div class="flex justify-content-center align-items-center">
+                <img width="400px" src="./assets/img/zentinel_powered.png" alt="zentinel powered">
+            </div>
+
+            <div class="flex px-7 justify-content-center w-full gap-5" style="margin-top: 6rem;">
+                <div class="flex w-full">
+                    <img width="900px" src="./assets/img/zentinel_section.png" alt="Que es zentinel">
+                </div>
+                <div class="flex w-full justify-content-center align-items-center">
+                    <div class="flex flex-column " style="width: 20rem;">
+                        <h2 class="zentinel-title">
+                            ¿Qué es
+                            <br />
+                            <span>
+                                Zentinel?
+                            </span>
+                        </h2>
+                        <p class="cctv-description text-justify">
+                            Plataforma digital que transforma
+                            registros en información valiosa para
+                            la toma de decisiones. La creación
+                            del aplicativo surge como respuesta
+                            a las limitaciones operativas actuales,
+                            donde la gestión depende de reportes
+                            manuales, lo que incrementa el riesgo
+                            de errores y retrasa la toma de
+                            decisiones. Zentinel se plantea como
+                            una solución integral que centraliza,
+                            automatiza y visibiliza la información
+                            crítica en tiempo real.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Showcase: métricas + mockup -->
+            <div class="zentinel-showcase">
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Trazabilidad<br />Digital</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">Disponibilidad</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">&lt; 5s</span>
+                        <span class="stat-label">Tiempo de<br />Búsqueda</span>
+                    </div>
+                </div>
+
+                <div class="showcase-bottom">
+                    <div class="mockup-wrap">
+                        <img src="./assets/img/mackbook_mockup.png" alt="Zentinel en MacBook">
+                    </div>
+                    <div class="tagline-card">
+                        <img class="tagline-logo" src="./assets/img/zentinel_logo.svg" alt="Zentinel">
+                        <p class="tagline-text">
+                            El siguiente<br />
+                            paso en la<br />
+                            <strong>seguridad<br />operativa</strong>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="sectors-section">
+        <div class="sectors-grid">
+        <div class="sectors-lead">
+            <i class="pi pi-arrow-down-right sectors-arrow"></i>
+            <h3 class="sectors-lead-text">Zentinel facilita la gestión de:</h3>
+        </div>
+
+        <div class="sector-card">
+            <!-- <i class="pi pi-shopping-bag sector-icon"></i> -->
+            <img height="80px" width="80px" src="./assets/img/acceso_garitas.svg" alt="">
+            <p class="sector-title">Acceso a<br />Garitas</p>
+        </div>
+
+        <div class="sector-card">
+            <!-- <i class="pi pi-apple sector-icon"></i> -->
+            <img height="80px" width="80px" src="./assets/img/balanceado.svg" alt="">
+
+            <p class="sector-title">Balanceado</p>
+        </div>
+
+        <div class="sector-card">
+            <img height="80px" width="80px" src="./assets/img/combustible.svg" alt="">
+            <p class="sector-title">Combustible</p>
+        </div>
+
+        <div class="sector-card">
+            <!-- <i class="pi pi-building sector-icon"></i> -->
+            <img height="80px" width="80px" src="./assets/img/reporteria_tiemporeal.svg" alt="">
+            <p class="sector-title">Reportería en <br />Tiempo Real</p>
+        </div>
+
+        <div class="sector-card">
+            <img height="80px" width="80px" src="./assets/img/dashboard_gerencial.svg" alt="">
+            <p class="sector-title">Dashboard <br />Gerencial</p>
+        </div>
+        </div>
+    </section>
+
+    <!-- ===== img1 · Carrusel activos por operación ===== -->
+    <section class="activos-section">
+        <h2 class="activos-title">
+            Se configura según los activos
+            <br />
+            de cada <span>operación.</span>
+        </h2>
+
+        <div class="activos-carousel">
+            <button type="button" class="activos-arrow activos-arrow--prev" (click)="prevActivos()"
+                aria-label="Anterior">
+                <i class="pi pi-caret-left"></i>
+            </button>
+
+            <div class="activos-viewport">
+                <div class="activos-track" [style.transform]="'translateX(-' + (activosIndex * 100) + '%)'">
+                    <div class="activos-slide" *ngFor="let slide of activosSlides">
+                        <img height="400px" width="400px" [src]="slide" alt="Panel Zentinel según activos de operación" />
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="activos-arrow activos-arrow--next" (click)="nextActivos()"
+                aria-label="Siguiente">
+                <i class="pi pi-caret-right"></i>
+            </button>
+        </div>
+
+        <div class="activos-dots">
+            <button type="button" class="activos-dot" *ngFor="let slide of activosSlides; let i = index"
+                [class.is-active]="i === activosIndex" (click)="goToActivos(i)"
+                [attr.aria-label]="'Ir al slide ' + (i + 1)"></button>
+        </div>
+    </section>
+
+    <!-- ===== img8 · Contrátanos · Seguridad Inteligente ===== -->
+    <section class="cta-section">
+        <div class="cta-content">
+        <h2 class="cta-title">
+            <span class="cta-title-top">Descubre como Zentinel puede transformar <span style="color: #10eec7;">tu operación</span>  </span>
+        </h2>
+        <button type="button" class="cta-button">
+            Agenda una demo
+        </button>
+        </div>
+    </section>
+
+
+
+
+    <app-footer></app-footer>
+
+</div>

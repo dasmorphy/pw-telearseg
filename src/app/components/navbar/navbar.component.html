@@ -15,9 +15,19 @@
     <!-- Navigation Menu -->
     <ul class="navbar-menu" [class.active]="isMenuOpen">
       <li *ngFor="let item of navItems" class="nav-item">
-        <a [href]="item.href" class="nav-link" (click)="closeMenu()">
+        <a
+          *ngIf="item.route; else anchorLink"
+          [routerLink]="item.route"
+          class="nav-link"
+          (click)="closeMenu()"
+        >
           {{ item.label }}
         </a>
+        <ng-template #anchorLink>
+          <a [href]="item.href" class="nav-link" (click)="closeMenu()">
+            {{ item.label }}
+          </a>
+        </ng-template>
       </li>
     </ul>
 

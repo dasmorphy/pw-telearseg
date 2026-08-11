@@ -1,0 +1,202 @@
+<div class="servicios-page">
+  <app-navbar></app-navbar>
+
+  <!-- ===== img1 · Conoce nuestras soluciones ===== -->
+  <section class="solutions-section" id="servicios">
+    <div class="solutions-header">
+      <h2 class="solutions-title">Conoce</h2>
+      <h3 class="solutions-subtitle">nuestras soluciones en</h3>
+    </div>
+
+    <div class="solutions-grid">
+      <div
+        *ngFor="let sol of solutions"
+        (click)="navigateRoute(sol)"
+        class="solution-card"
+      >
+        <i class="pi pi-arrow-down-right solution-arrow"></i>
+        <p class="solution-label" [innerHTML]="sol.label"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== img2 · Video Vigilancia: Monitoreo CCTV ===== -->
+  <section class="cctv-section" id="video-vigilancia">
+    <div class="cctv-content">
+      <div class="cctv-text">
+        <h2 class="cctv-title">Video Vigilancia:<br />Monitoreo CCTV</h2>
+        <p class="cctv-description">
+          Las innovadoras cámaras de video vigilancia equipadas con inteligencia
+          artificial y tecnología térmica permiten la vigilancia en cada rincón
+          de su empresa. Estas, junto al trabajo de nuestra Central de Monitoreo
+          24/7, aseguran la detección completa de intrusos, vehículos, errores
+          operativos, e inclusive la prevención de incidentes.
+        </p>
+      </div>
+
+      <div class="cctv-visual">
+        <img src="./assets/img/central_monitoreo.png" alt="Central de Monitoreo CCTV" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== img3 · ¿Qué monitoreamos? ===== -->
+  <section class="monitoring-section">
+    <h2 class="monitoring-heading">¿Qué monitoreamos?</h2>
+
+    <div class="monitoring-grid">
+      <div class="monitoring-card" *ngFor="let item of monitoring">
+        <div class="monitoring-media">
+          <img [src]="item.image" [alt]="item.title" />
+
+          <span class="monitoring-badge" *ngIf="item.badge">{{ item.badge }}</span>
+
+          <div class="monitoring-overlay">
+            <p class="monitoring-desc">{{ item.description }}</p>
+          </div>
+        </div>
+        <p class="monitoring-title" [innerHTML]="item.title"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== img4 · Torres y Estructuras ===== -->
+  <section class="towers-section" id="torres">
+    <div class="towers-content">
+      <div class="towers-visual">
+        <img src="./assets/img/torres_estructuras.png" alt="Torres y Estructuras" />
+      </div>
+
+      <div class="towers-text">
+        <h2 class="towers-title">Torres y<br />Estructuras</h2>
+        <p class="towers-description">
+          En Telearseg diseñamos, fabricamos y construimos torres y estructuras
+          metálicas especializadas para cada cliente, desarrolladas bajo altos
+          estándares técnicos de ingeniería, calidad y seguridad.
+        </p>
+        <p class="towers-description">
+          Cada estructura es planificada de manera estratégica, considerando las
+          condiciones ambientales, operativas y geográficas del entorno,
+          garantizando la resistencia estructural, estabilidad, durabilidad y
+          óptimo desempeño a largo plazo, asegurando una infraestructura sólida,
+          confiable y preparada para soportar sistemas tecnológicos y exigencias
+          operativas de gran escala.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== img5 · Control de Accesos ===== -->
+  <section class="access-section" id="control-accesos">
+    <div class="access-header">
+      <h2 class="access-title">Control de Accesos</h2>
+      <p class="access-intro">
+        Garantizamos que solo el personal autorizado pueda acceder a sus
+        instalaciones. Desde barreras vehiculares controladas por software hasta
+        sistemas de acceso biométricos de última generación, cada entrada está
+        protegida con múltiples capas de seguridad.
+      </p>
+    </div>
+
+    <div class="access-grid">
+      <div class="access-card" *ngFor="let item of accessControl">
+        <div class="access-media">
+          <img [src]="item.image" [alt]="item.title" />
+
+          <div class="access-overlay">
+            <p class="access-desc">{{ item.description }}</p>
+          </div>
+        </div>
+        <p class="access-card-title">{{ item.title }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== img6 · Infraestructura TI y Comunicaciones ===== -->
+  <section class="infra-section" id="infraestructura">
+    <div class="infra-header">
+      <h2 class="infra-title">
+        Infraestructura TI<br />y Comunicaciones
+      </h2>
+      <p class="infra-intro">
+        Diseñamos e implementamos soluciones tecnológicas que garantizan una
+        conectividad estable, segura y de alto rendimiento. Nuestro enfoque
+        permite asegurar la disponibilidad, escalabilidad y protección de los
+        recursos tecnológicos para optimizar su operación.
+      </p>
+    </div>
+
+    <div class="infra-carousel">
+      <button
+        type="button"
+        class="infra-arrow infra-arrow--prev"
+        (click)="prevInfraSlide()"
+        aria-label="Anterior"
+      >
+        <i class="pi pi-caret-left"></i>
+      </button>
+
+      <div class="infra-viewport">
+        <div
+          class="infra-track"
+          [style.transform]="'translateX(-' + infraIndex * 100 + '%)'"
+        >
+          <div class="infra-slide" *ngFor="let slide of infraSlides">
+            <div class="infra-card" *ngFor="let item of slide">
+              <div class="infra-media">
+                <img [src]="item.image" [alt]="item.title" />
+              </div>
+              <p class="infra-card-title" [innerHTML]="item.title"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="infra-arrow infra-arrow--next"
+        (click)="nextInfraSlide()"
+        aria-label="Siguiente"
+      >
+        <i class="pi pi-caret-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== img7 · Sistemas Fotovoltaicos ===== -->
+  <section class="photovoltaic-section" id="fotovoltaicos">
+    <div class="photovoltaic-header">
+      <h2 class="photovoltaic-title">Sistemas<br />Fotovoltaicos</h2>
+      <p class="photovoltaic-intro">
+        Ofrecemos servicios especializados de instalación de sistemas
+        fotovoltaicos, integrando soluciones de energía solar que garantizan el
+        funcionamiento eficiente de los sistemas de seguridad electrónica,
+        asegurando un funcionamiento continuo en los entornos operativos.
+      </p>
+    </div>
+
+    <div class="photovoltaic-grid">
+      <div class="photovoltaic-card" *ngFor="let item of photovoltaics">
+        <div class="photovoltaic-media">
+          <img [src]="item.image" [alt]="item.title" />
+        </div>
+        <p class="photovoltaic-card-title" [innerHTML]="item.title"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== img8 · Contrátanos · Seguridad Inteligente ===== -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">
+        <span class="cta-title-top">Da el siguiente paso hacia una</span>
+        <span class="cta-title-highlight">Seguridad Inteligente</span>
+      </h2>
+      <button type="button" class="cta-button" (click)="downloadBrochure()">
+        Contáctanos
+      </button>
+    </div>
+  </section>
+</div>
+
+<app-footer></app-footer>

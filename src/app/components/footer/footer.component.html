@@ -1,0 +1,35 @@
+<footer class="footer flex align-items-center flex-column justify-content-center">
+  <div class="flex align-items-center flex-column h-full justify-content-center w-full">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="./assets/logo_telearseg.svg" alt="TeleArseg" />
+      </div>
+  
+      <div class="footer-col">
+        <h3 class="footer-heading">EMPRESA</h3>
+        <ul class="footer-links">
+          <li *ngFor="let link of empresaLinks">
+            <a *ngIf="link.route" [routerLink]="link.route">{{ link.label }}</a>
+            <a *ngIf="!link.route" [href]="link.href">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h3 class="footer-heading">CONTACTO</h3>
+        <ul class="footer-links">
+          <li>
+            <a [href]="'tel:' + contacto.telefono.split(' ').join('')">{{ contacto.telefono }}</a>
+          </li>
+          <li>
+            <a [href]="'mailto:' + contacto.email">{{ contacto.email }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+    <p class="footer-copyright">
+      Copyright © TeleArseg {{ currentYear }} | Realizado por el querido equipo de marketing Telearseg
+    </p>
+</footer>
