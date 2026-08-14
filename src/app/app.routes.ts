@@ -5,6 +5,8 @@ import { ServiciosComponent } from './components/servicios/servicios.component';
 import { CamarasComponent } from './components/camaras/camaras.component';
 import { ZentinelComponent } from './components/zentinel/zentinel.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 export const routes: Routes = [
     {
@@ -26,6 +28,14 @@ export const routes: Routes = [
     {
         path: "proyectos",
         component: ProjectsComponent,
+    },
+    {
+        path: "nosotros",
+        component: NosotrosComponent,
+    },
+    {
+        path: "contacto",
+        component: ContactoComponent,
     },
     {
         path: "**",

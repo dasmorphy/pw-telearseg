@@ -1,0 +1,293 @@
+:host {
+  display: block;
+  background: #06060a;
+  color: #fff;
+}
+
+.about-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #06060a;
+}
+
+.section-shell {
+  width: min(1120px, calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+.about-hero {
+  min-height: 620px;
+  padding: 200px 1.5rem 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at 30% 18%, rgba(75, 72, 226, .28), transparent 31%),
+    linear-gradient(180deg, #0b0a18 0%, #0b0b19 80%, #07070d 100%);
+  border-top: 2px solid rgba(75, 105, 255, .55);
+}
+
+.section-heading span {
+  display: block;
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.section-heading h1 {
+  margin: .25rem 0 3.5rem;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: .9;
+  letter-spacing: .02em;
+  background: linear-gradient(90deg, #426cdf, #23d3e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-copy {
+  max-width: 920px;
+  margin: 0;
+  color: #d5d4df;
+  font-size: clamp(1rem, 1.5vw, 1.35rem);
+  line-height: 1.35;
+}
+
+.about-carousel {
+  position: relative;
+  aspect-ratio: 16 / 6.1;
+  min-height: 320px;
+  background: #080912;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+
+.carousel-slide.active { opacity: 1; }
+
+.carousel-dots {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 1.3rem;
+  display: flex;
+  gap: .5rem;
+  transform: translateX(-50%);
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .95);
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.carousel-dot.active {
+  background: #467aea;
+  transform: scale(1.15);
+}
+
+.company-copy {
+  padding-block: 120px 130px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 8vw, 8rem);
+  color: #bfc0c9;
+  font-size: .98rem;
+  line-height: 1.7;
+}
+
+.company-copy p { margin: 0 0 2rem; }
+
+.purpose-section {
+  min-height: 880px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  background: #000;
+}
+
+.purpose-image { position: relative; }
+.purpose-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 62%, #000 100%);
+}
+
+.purpose-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.purpose-copy {
+  padding: 130px clamp(3rem, 8vw, 9rem) 100px clamp(2rem, 5vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5.5rem;
+}
+
+.purpose-copy h2 {
+  margin: 0 0 2.5rem;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: .95;
+  font-weight: 600;
+}
+
+.purpose-copy h2 strong {
+  display: block;
+  color: #426edf;
+  font-weight: 700;
+}
+
+.purpose-copy p {
+  max-width: 650px;
+  margin: 0;
+  color: #b7b7be;
+  font-size: .98rem;
+  line-height: 1.65;
+}
+
+.coverage-section {
+  position: relative;
+  min-height: 1120px;
+  padding: 115px 0 100px;
+  background: #090919;
+}
+
+.coverage-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .7;
+}
+
+.coverage-content { position: relative; z-index: 1; }
+
+.coverage-heading { text-align: center; }
+.coverage-heading span, .recognitions > span {
+  display: block;
+  color: #c9c9d2;
+  font-size: 1.7rem;
+}
+
+.coverage-heading h2, .recognitions h2 {
+  margin: .1rem 0 1.2rem;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: .02em;
+}
+
+.coverage-heading img { width: min(310px, 65vw); }
+
+.stats-grid {
+  margin: 75px auto 125px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.stat-card {
+  min-height: 260px;
+  padding: 2.25rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background:
+    linear-gradient(#0b0b1a, #0b0b1a) padding-box,
+    linear-gradient(140deg, #3e70e3, #27d3d4) border-box;
+  text-align: center;
+}
+
+.stat-card span, .stat-card small { color: #c4c4ce; font-size: 1.35rem; }
+.stat-card strong { margin: .4rem 0; font-size: clamp(3rem, 6vw, 5.25rem); line-height: 1; }
+
+.recognitions { text-align: center; }
+.recognition-grid {
+  margin-top: 65px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.recognition-grid img {
+  width: 100%;
+  height: 130px;
+  // padding: .8rem;
+  object-fit: contain;
+  // background: #fff;
+  border-radius: 10px;
+}
+
+.about-actions {
+  padding: 85px 1.5rem 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  background: #000;
+}
+
+.action {
+  width: min(460px, 100%);
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  color: #103065;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.action:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(47, 166, 255, .24); }
+.action.primary { background: linear-gradient(90deg, #4776e6, #32d4cb); }
+.action.secondary {
+  border: 1px solid transparent;
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #4776e6, #32d4cb) border-box;
+  color: #477de1;
+}
+
+@media (max-width: 900px) {
+  .company-copy { grid-template-columns: 1fr; gap: 1rem; padding-block: 75px; }
+  .purpose-section { grid-template-columns: 1fr; }
+  .purpose-image { min-height: 600px; }
+  .purpose-image::after { background: linear-gradient(180deg, transparent 65%, #000 100%); }
+  .purpose-copy { padding: 30px 2rem 90px; gap: 4rem; }
+  .stats-grid { gap: 1rem; }
+  .stat-card { min-height: 210px; }
+  .recognition-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .about-hero { min-height: 500px; padding-top: 160px; }
+  .section-heading h1 { margin-bottom: 2.5rem; }
+  .about-carousel { aspect-ratio: 4 / 3; }
+  .purpose-image { min-height: 480px; }
+  .coverage-section { padding-top: 80px; }
+  .stats-grid { grid-template-columns: 1fr; margin-bottom: 90px; }
+  .stat-card { min-height: 190px; }
+  .recognition-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .recognition-grid img { height: 110px; }
+}

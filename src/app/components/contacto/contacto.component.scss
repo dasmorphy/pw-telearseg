@@ -1,0 +1,218 @@
+
+// Contáctanos
+.contact-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #050608;
+    color: #fff;
+    padding: 4rem 2rem 2rem;
+    position: relative;
+    z-index: 3;
+}
+
+.contact-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+    background: linear-gradient(135deg, #0066ff, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @media (max-width: 768px) {
+        font-size: 2.75rem;
+    }
+}
+
+.contact-content {
+    // flex: 1;
+    padding-top: 7rem;
+    display: flex;
+    justify-content: center; // centra verticalmente
+    align-items: center;     // centra horizontalmente
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    width: 100%;
+    max-width: 1150px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 220px;
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+    background: linear-gradient(160deg, rgba(20, 30, 55, 0.55) 0%, rgba(6, 10, 22, 0.65) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 30px rgba(22, 122, 236, 0.664);
+    }
+}
+
+.contact-icon {
+    font-size: 2.75rem;
+    color: #0a84ff;
+    margin-bottom: 1.5rem;
+}
+
+.contact-main {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+
+    @media (max-width: 768px) {
+        font-size: 1.3rem;
+    }
+}
+
+.contact-sub {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #c9d2dc;
+    margin: 0.5rem 0 0;
+    line-height: 1.4;
+}
+
+.contact-footer {
+    margin-top: auto;
+    text-align: center;
+    color: #8a94a3;
+    font-size: .85rem;
+    padding-top: 2rem;
+}
+
+.business-hours {
+    min-height: 100vh;
+    padding: clamp(5rem, 10vw, 10rem) clamp(2rem, 12vw, 15rem);
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 52% 0%, rgba(14, 52, 113, 0.12), transparent 42%),
+        #070c26;
+    color: #fff;
+}
+
+.business-hours__inner {
+    gap: 10rem;
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    // display: grid;
+    // grid-template-columns: minmax(310px, 0.8fr) minmax(620px, 1.6fr);
+    // gap: clamp(4rem, 10vw, 12rem);
+    align-items: center;
+}
+
+.business-hours__title {
+    margin: 0;
+    font-size: 5rem;
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+}
+
+.business-hours__schedule h3 {
+    text-align: center;
+    margin: 0 0 1.5rem;
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.015em;
+    background: linear-gradient(90deg, #126ce7 0%, #08c4cd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.business-hours__times {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.business-hours__time {
+    min-height: 78px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-radius: 9px;
+    background:
+        linear-gradient(#070c26, #070c26) padding-box,
+        linear-gradient(110deg, #126ce7, #08c4cd) border-box;
+    font-size: clamp(2rem, 3vw, 3.25rem);
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+    .business-hours {
+        padding-inline: clamp(2rem, 7vw, 5rem);
+    }
+
+    .business-hours__inner {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .business-hours__title {
+        text-align: center;
+    }
+
+    .business-hours__schedule h3 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 650px) {
+    .business-hours {
+        padding: 6rem 1.5rem;
+    }
+
+    .business-hours__inner {
+        gap: 3.5rem;
+    }
+
+    .business-hours__title {
+        font-size: clamp(3rem, 14vw, 4.25rem);
+    }
+
+    .business-hours__schedule h3 {
+        margin-bottom: 2rem;
+        font-size: clamp(2.35rem, 11vw, 3.5rem);
+    }
+
+    .business-hours__times {
+        grid-template-columns: 1fr;
+    }
+
+    .business-hours__time {
+        min-height: 72px;
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+    }
+}
+
+.h-iframe {
+    min-height: 100vh;
+}

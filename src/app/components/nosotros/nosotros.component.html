@@ -1,0 +1,132 @@
+<main class="about-page">
+  <app-navbar></app-navbar>
+
+  <section class="about-hero" id="nosotros">
+    <div class="section-heading">
+      <span>Sobre</span>
+      <h1>NOSOTROS</h1>
+    </div>
+    <p class="hero-copy">
+      Comenzamos como instaladores de cámaras en una época de necesidad creciente,
+      pero con el avance de la tecnología y de las operaciones, también incrementaron
+      los requerimientos del sector camaronero e industrial.
+    </p>
+  </section>
+
+  <section class="about-carousel" aria-label="Galería de TeleArseg">
+    <img
+      *ngFor="let slide of slides; let i = index"
+      class="carousel-slide"
+      [class.active]="i === currentSlide"
+      [src]="slide"
+      [alt]="'TeleArseg - imagen ' + (i + 1)"
+    />
+    <div class="carousel-dots" role="tablist" aria-label="Seleccionar imagen">
+      <button
+        *ngFor="let slide of slides; let i = index"
+        type="button"
+        class="carousel-dot"
+        [class.active]="i === currentSlide"
+        [attr.aria-label]="'Ver imagen ' + (i + 1)"
+        [attr.aria-selected]="i === currentSlide"
+        (click)="goToSlide(i)"
+      ></button>
+    </div>
+  </section>
+
+  <section class="company-copy section-shell">
+    <p>
+      Somos una empresa ecuatoriana dedicada a ofrecer soluciones tecnológicas innovadoras
+      en monitoreo, videovigilancia, torres de comunicación, remolques remotos y energía
+      renovable, especialmente diseñadas para sectores como la acuicultura, agricultura,
+      floricultura, industria, ganadería y urbanizaciones. Además, tenemos cobertura en
+      Panamá, Perú, Nicaragua y Honduras; y muy pronto en otros países de Hispanoamérica.
+      Nuestro objetivo es mejorar la seguridad, eficiencia y sostenibilidad de las
+      operaciones en zonas rurales y áreas sin acceso a la red eléctrica con tecnología
+      avanzada; dando soluciones en tiempo real, adaptadas a las necesidades de cada cliente.
+    </p>
+    <div>
+      <p>
+        A través de nuestra propuesta de energía fotovoltaica, aseguramos el suministro de
+        energía limpia y autónomo para operar estos sistemas en áreas sin infraestructura
+        eléctrica, contribuyendo al desarrollo sostenible de las zonas más apartadas del Ecuador.
+      </p>
+      <p>
+        Con un enfoque integral y personalizado, TeleArseg se posiciona como un aliado
+        estratégico para los sectores productivos del país, brindando soluciones que optimizan
+        la seguridad, productividad y sostenibilidad de sus clientes.
+      </p>
+    </div>
+  </section>
+
+  <section class="purpose-section">
+    <div class="purpose-image">
+      <img src="./assets/img/nosotros/mision.png" alt="Especialista de TeleArseg" />
+    </div>
+    <div class="purpose-copy">
+      <article>
+        <h2>Nuestra <strong>Misión</strong></h2>
+        <p>
+          Ser el referente líder en soluciones integrales de seguridad electrónica y monitoreo
+          remoto, garantizando la protección inteligente de los recursos y operaciones de
+          nuestros clientes a través de tecnología confiable, talento altamente calificado y
+          una gestión orientada a la calidad, la innovación y la mejora continua.
+        </p>
+      </article>
+      <article>
+        <h2>Nuestra <strong>Visión</strong></h2>
+        <p>
+          En los próximos tres años, consolidarnos como la empresa líder en soluciones de
+          seguridad electrónica y monitoreo remoto en el mercado nacional, reconocida por la
+          excelencia en el servicio, la innovación tecnológica y la confianza de nuestros clientes.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="coverage-section">
+    <img class="coverage-map" src="./assets/img/mapa.svg" alt="Mapa de cobertura de TeleArseg" />
+    <div class="coverage-content section-shell">
+      <div class="coverage-heading">
+        <span>Nuestra Cobertura</span>
+        <h2>NACIONAL E INTERNACIONAL</h2>
+        <img src="./assets/img/banderas.png" alt="Ecuador, Perú, Panamá, Honduras y Nicaragua" />
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span>Monitoreamos</span><strong>+22K</strong><small>Hectáreas</small>
+        </article>
+        <article class="stat-card">
+          <span>Hemos instalado</span><strong>+10K</strong><small>Cámaras</small>
+        </article>
+        <article class="stat-card">
+          <span>Contamos con</span><strong>+350</strong><small>Clientes Globales</small>
+        </article>
+      </div>
+
+      <div class="recognitions">
+        <span>Nuestros</span>
+        <h2>RECONOCIMIENTOS</h2>
+        <div class="recognition-grid">
+          <img src="./assets/img/nosotros/logo_basc.png" alt="Certificación BASC" />
+          <img src="./assets/img/nosotros/logo_socioatlas.png" alt="Socio Atlas" />
+          <img src="./assets/img/nosotros/certificacion_hikvision.png" alt="Certificación Hikvision" />
+          <img src="./assets/img/nosotros/certificacion_dahua.png" alt="Certificación Dahua" />
+          <img src="./assets/img/nosotros/certificacion_xmart.png" alt="Certificación Xmart" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-actions" id="contacto">
+    <a class="action primary" href="mailto:info@telearseg.net?subject=Solicitud%20de%20cotización">
+      Solicita una cotización
+    </a>
+    <a class="action secondary" href="mailto:info@telearseg.net?subject=Trabaja%20con%20nosotros">
+      Trabaja con nosotros
+    </a>
+  </section>
+
+  <app-footer></app-footer>
+</main>

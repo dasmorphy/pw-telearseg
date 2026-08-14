@@ -19,7 +19,7 @@ export class FooterComponent {
   currentYear = 2026;
 
   empresaLinks: FooterLink[] = [
-    { label: 'Sobre Nosotros', href: '#nosotros' },
+    { label: 'Sobre Nosotros', route: '/nosotros' },
     { label: 'Trabaja con Nosotros', href: '#trabaja' }
   ];
 

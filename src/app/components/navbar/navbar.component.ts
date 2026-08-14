@@ -23,8 +23,8 @@ export class NavbarComponent implements OnInit {
     { label: 'Servicios', route: '/servicios' },
     { label: 'Zentinel', href: '/zentinel' },
     { label: 'Proyectos', route: '/proyectos' },
-    { label: 'Nosotros', href: '#nosotros' },
-    { label: 'Contacto', href: '#contacto' }
+    { label: 'Nosotros', route: '/nosotros' },
+    { label: 'Contacto', href: '/contacto' }
   ];
 
   ngOnInit() {
