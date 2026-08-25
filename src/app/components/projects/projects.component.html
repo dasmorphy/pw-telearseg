@@ -1,6 +1,12 @@
 <div class="projects-page">
   <app-navbar></app-navbar>
 
+  <section class="video-project">
+    <div class="flex">
+      <video src="./assets/videos/seccion_proyectos.mp4" autoplay controls loop playsinline></video>
+    </div>
+  </section>
+
   <!-- ===== img1 · Seguridad que Protege Tu Producción ===== -->
   <section class="hero-section">
     <div class="hero-inner">
@@ -19,11 +25,11 @@
       </p>
 
       <div class="hero-buttons">
-        <button type="button" class="btn btn-primary" routerLink="/camaras">
+        <button type="button" class="btn btn-primary" routerLink="/camaras" style="width: 200px;">
           Ver Cámaras
         </button>
-        <button type="button" class="btn btn-link" routerLink="/servicios">
-          Ver Soluciones
+        <button type="button" class="btn btn-link" routerLink="/servicios" style="width: 200px;">
+          Conoce más
         </button>
       </div>
     </div>
@@ -64,35 +70,187 @@
   </section>
 
   <!-- ===== img2 → img11 · Sectores y clientes ===== -->
+
   <section
     class="sector-section"
-    *ngFor="let sector of sectors"
-    [id]="sector.id"
-    [class.sector-section--map]="sector.mapBackground"
   >
-    <div class="sector-banner">
-      <div class="sector-text">
+    <div class="sector-camaronero">
+      <div class="px-8">
         <h2 class="sector-title">
-          <span class="sector-title-top" *ngIf="sector.kicker">{{ sector.kicker }}</span>
-          <span class="sector-title-highlight">{{ sector.title }}</span>
+          <span class="sector-title-top">Sector</span>
+          <span class="sector-title-highlight">CAMARONERO</span>
         </h2>
 
-        <p class="sector-description">{{ sector.description }}</p>
+        <p class="sector-description">
+          Llevamos la seguridad electrónica más allá de la vigilancia:
+          aplicamos monitoreo inteligente y control de procesos en el
+          sector bananero, optimizando cada etapa productiva con
+          tecnología de precisión, trazabilidad y respuesta en tiempo real.
+        </p>
 
         <button
           type="button"
-          class="btn btn-link sector-brochure"
-          *ngIf="sector.brochure !== undefined"
-          (click)="downloadBrochure(sector)"
+          class="btn btn-primary sector-brochure"
+          style="height: 4rem; font-size: 22px;"
         >
           Descargar brochure
         </button>
       </div>
+    </div>
+  </section>
 
-      <div class="sector-visual">
+
+  <section
+    class="sector-section"
+  >
+    <div class="sector-bananero justify-content-end">
+      <div>
+        <h2 class="sector-title">
+          <span class="sector-title-top" style="font-size: 5rem;">Sector</span>
+          <span class="sector-title-highlight" style="font-size: 6rem;">BANANERO</span>
+        </h2>
+
+        <p class="sector-description" style="font-size: 1.2rem;">
+          Trayectoria comprobada en el sector camaronero, con monitoreo
+          del proceso productivo: desde el cultivo hasta el empaque. Nuestra
+          experiencia integra sistemas de videovigilancia, monitoreo, control
+          de accesos y seguridad perimetral, fortaleciendo la protección de
+          instalaciones, personal, equipos y áreas productivas.
+        </p>
+
+        <button
+          type="button"
+          class="btn btn-primary sector-brochure"
+          style="height: 4rem; font-size: 22px;"
+        >
+          Descargar brochure
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <section
+    class="sector-section"
+  >
+    <div class="sector-industrial">
+      <div class="px-8">
+        <h2 class="sector-title">
+          <span class="sector-title-top" style="font-size: 5rem;">Sector</span>
+          <span class="sector-title-highlight" style="font-size: 6rem;">INDUSTRIAL</span>
+        </h2>
+
+        <p class="sector-description" style="font-size: 1.2rem;">
+          Potenciamos la seguridad electrónica mediante monitoreo
+          inteligente y control de accesos, optimizando la operación en
+          tiempo real. Hoy, ampliamos nuestra presencia para llevar eficiencia,
+          precisión y confianza a más industrias.
+        </p>
+
+        <button
+          type="button"
+          class="btn btn-primary sector-brochure"
+          style="height: 4rem; font-size: 22px;"
+        >
+          Descargar brochure
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="sector-section"
+  >
+    <div class="haciendas justify-content-end">
+      <div class="px-8">
+        <h2 class="sector-title">
+          <span class="sector-title-highlight" style="font-size: 6rem;">HACIENDAS</span>
+        </h2>
+
+        <p class="sector-description" style="font-size: 1.2rem;">
+          Impulsamos la productividad en haciendas con monitoreo
+          inteligente de la producción, asegurando control de calidad,
+          supervisión de procesos y decisiones en tiempo real para una operación
+          más eficiente y rentable.
+        </p>
+
+        <button
+          type="button"
+          class="btn btn-primary sector-brochure"
+          style="height: 4rem; font-size: 22px;"
+        >
+          Descargar brochure
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="sector-section"
+  >
+    <div class="urbanizaciones">
+      <div class="px-8">
+        <h2 class="sector-title">
+          <span class="sector-title-highlight" style="font-size: 6rem;">URBANIZACIONES</span>
+        </h2>
+
+        <p class="sector-description" style="font-size: 1.2rem;">
+          Elevamos la seguridad en urbanizaciones mediante control
+          de accesos inteligente, tecnología ANPR para identificación
+          vehicular y protocolos de respuesta en tiempo real, garantizando
+          una gestión ágil, segura y confiable para residentes y visitantes.
+        </p>
+
+        <button
+          type="button"
+          class="btn btn-primary sector-brochure"
+          style="height: 4rem; font-size: 22px;"
+        >
+          Descargar brochure
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <section
+    class="sector-section sector-section--map h-full w-full flex justify-content-center align-items-center"
+    style="min-height: 100vh;"
+  >
+    <div class="sector-map ">
+      <div class="px-8 flex flex-column justify-content-center align-items-center text-center">
+        <h2 class="sector-title">
+          <span class="sector-title-top">Clientes</span>
+          <span class="sector-title-highlight">INTERNACIONALES</span>
+        </h2>
+
+        <p class="text-flags text-center">
+          Contamos con presencia en distintos países del continente, llevando
+          nuestra experiencia y tecnología a nivel internacional.
+        </p>
+
+      </div>
+
+      <div class="w-full flex justify-content-center">
+        <div class="sector-flags" >
+          <span
+            class="sector-flag"
+            *ngFor="let flag of [
+              { name: 'Perú', position: '24.92%' },
+              { name: 'Panamá', position: '49.92%' },
+              { name: 'Honduras', position: '75%' },
+              { name: 'Nicaragua', position: '100%' }
+            ]"
+            [style.background-position-x]="flag.position"
+            [title]="flag.name"
+            [attr.aria-label]="flag.name"
+          ></span>
+        </div>
+      </div>
+
+      <!-- <div class="sector-visual">
         <img *ngIf="sector.image" [src]="sector.image" [alt]="sector.title" />
 
-        <!-- img11 · Banderas recortadas del sprite banderas.png -->
         <div class="sector-flags" *ngIf="sector.flags?.length">
           <span
             class="sector-flag"
@@ -102,8 +260,24 @@
             [attr.aria-label]="flag.name"
           ></span>
         </div>
-      </div>
+      </div> -->
     </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <section
+    class="sector-section"
+    *ngFor="let sector of sectors"
+    [id]="sector.id"
+  >
 
     <!-- img3 · img4 · img7 · img9 · img10 · img11 · Logos de clientes -->
     <div class="logo-group" *ngFor="let group of sector.groups">
@@ -115,13 +289,6 @@
           <img [src]="logo.image" [alt]="logo.name" />
         </div>
       </div>
-
-      <button type="button" class="logo-toggle" (click)="toggleGroup(group.id)">
-        <span class="logo-toggle-arrow" [class.down]="!isExpanded(group.id)"></span>
-        <span class="logo-toggle-label">
-          {{ isExpanded(group.id) ? 'Ver menos' : 'Ver más' }}
-        </span>
-      </button>
     </div>
   </section>
 

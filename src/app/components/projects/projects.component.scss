@@ -5,6 +5,21 @@
     background: #030814;
 }
 
+.video-project {
+    width: 100%;
+    min-height: 100vh;
+    // overflow-x: hidden;
+    // font-family: 'Montserrat', sans-serif;
+    background: #000000;
+
+    video {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
+}
+
 /* ---------- Botones (mismo lenguaje que el landing) ---------- */
 .btn {
     padding: 0.75rem 2rem;
@@ -264,6 +279,168 @@
     }
 }
 
+.sector-camaronero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    min-height: 89vh;
+    padding: 5rem 4.5rem;
+    background-image: url('/assets/img/projects/banner_sectorcamaronero.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-position-y: center;
+    // background: radial-gradient(ellipse at 5% 0%, rgba(20, 66, 214, 0.6) 0%, transparent 70%),
+    //     radial-gradient(ellipse at 40% 50%, #050d1c 0%, #000308 70%);
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 4rem 2.5rem;
+        min-height: 0;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        padding: 3.5rem 1.5rem;
+    }
+}
+
+.sector-bananero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    min-height: 100vh;
+    padding: 5rem 4.5rem;
+    background-image: url('/assets/img/projects/banner_sectorbananero.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-position-y: center;
+    // background: radial-gradient(ellipse at 5% 0%, rgba(20, 66, 214, 0.6) 0%, transparent 70%),
+    //     radial-gradient(ellipse at 40% 50%, #050d1c 0%, #000308 70%);
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 4rem 2.5rem;
+        min-height: 0;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        padding: 3.5rem 1.5rem;
+    }
+}
+
+.sector-industrial {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    min-height: 88vh;
+    padding: 5rem 4.5rem;
+    background-image: url('/assets/img/projects/banner_sectorindustrial.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    // background-position-y: center;
+    // background: radial-gradient(ellipse at 5% 0%, rgba(20, 66, 214, 0.6) 0%, transparent 70%),
+    //     radial-gradient(ellipse at 40% 50%, #050d1c 0%, #000308 70%);
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 4rem 2.5rem;
+        min-height: 0;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        padding: 3.5rem 1.5rem;
+    }
+}
+
+.haciendas {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    min-height: 88vh;
+    padding: 5rem 4.5rem;
+    background-image: url('/assets/img/projects/banner_haciendas.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    // background-position-y: center;
+    // background: radial-gradient(ellipse at 5% 0%, rgba(20, 66, 214, 0.6) 0%, transparent 70%),
+    //     radial-gradient(ellipse at 40% 50%, #050d1c 0%, #000308 70%);
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 4rem 2.5rem;
+        min-height: 0;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        padding: 3.5rem 1.5rem;
+    }
+}
+
+.urbanizaciones {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    min-height: 88vh;
+    padding: 5rem 4.5rem;
+    background-image: url('/assets/img/projects/banner_urbanizaciones.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    // background-position-y: center;
+    // background: radial-gradient(ellipse at 5% 0%, rgba(20, 66, 214, 0.6) 0%, transparent 70%),
+    //     radial-gradient(ellipse at 40% 50%, #050d1c 0%, #000308 70%);
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 4rem 2.5rem;
+        min-height: 0;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        padding: 3.5rem 1.5rem;
+    }
+}
+
+.section-map {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    min-height: 88vh;
+    padding: 5rem 4.5rem;
+    background-image: url('/assets/img/projects/banner_urbanizaciones.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    // background-position-y: center;
+    // background: radial-gradient(ellipse at 5% 0%, rgba(20, 66, 214, 0.6) 0%, transparent 70%),
+    //     radial-gradient(ellipse at 40% 50%, #050d1c 0%, #000308 70%);
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 4rem 2.5rem;
+        min-height: 0;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        padding: 3.5rem 1.5rem;
+    }
+}
+
 .sector-text {
     flex: 1;
     min-width: 0;
@@ -293,11 +470,30 @@
 }
 
 .sector-description {
-    max-width: 470px;
+    max-width: 545px;
     margin: 0 0 2.5rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.8;
+    color: #c9d2dc;
+    text-align: justify;
+
+    @media (max-width: 992px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 0.95rem;
+    }
+}
+
+.text-flags {
+    max-width: 545px;
+    margin: 0 0 2.5rem;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
     color: #c9d2dc;
     text-align: justify;
 
@@ -333,11 +529,10 @@
 
 /* ---------- img11 · Banderas (recorte del sprite banderas.png) ---------- */
 .sector-flags {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 0.75rem;
     width: 100%;
-    max-width: 260px;
+    max-width: 600px;
 
     @media (max-width: 480px) {
         max-width: 200px;
@@ -425,7 +620,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     color: #ffffff;
     padding: 8rem 2rem 5rem;
@@ -531,17 +725,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 2.4 / 1;
+    // aspect-ratio: 2.4 / 1;
     padding: 0.75rem 1rem;
-    border-radius: 8px;
-    background: #ffffff;
-    box-shadow: 0 0 0 1px rgba(31, 214, 209, 0.4), 0 10px 24px rgba(0, 0, 0, 0.55);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    // border-radius: 8px;
+    // background: #ffffff;
+    // box-shadow: 0 0 0 1px rgba(31, 214, 209, 0.4), 0 10px 24px rgba(0, 0, 0, 0.55);
+    // transition: transform 0.25s ease, box-shadow 0.25s ease;
 
-    &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 0 0 1px rgba(31, 214, 209, 0.8), 0 16px 32px rgba(10, 132, 255, 0.3);
-    }
+    // &:hover {
+    //     transform: translateY(-4px);
+    //     box-shadow: 0 0 0 1px rgba(31, 214, 209, 0.8), 0 16px 32px rgba(10, 132, 255, 0.3);
+    // }
 
     img {
         max-width: 100%;

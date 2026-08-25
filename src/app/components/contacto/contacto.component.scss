@@ -46,6 +46,14 @@
     }
 }
 
+
+.contact-email {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    text-align: center;
+}
+
 .contact-card {
     display: flex;
     flex-direction: column;

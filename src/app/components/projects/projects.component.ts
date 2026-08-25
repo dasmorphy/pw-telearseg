@@ -67,7 +67,7 @@ export class ProjectsComponent {
             kicker: 'Sector',
             title: 'CAMARONERO',
             description:
-                'Trayectoria comprobada en el sector camaronero, con monitoreo del proceso productivo: desde el cultivo hasta el empaque.',
+                'Trayectoria comprobada en el sector camaronero, con monitoreo del proceso productivo: desde el cultivo hasta el empaque. Nuestra experiencia integra sistemas de videovigilancia, monitoreo, control de accesos y seguridad perimetral, fortaleciendo la protección de instalaciones, personal, equipos y áreas productivas.',
             image: './assets/img/projects/sector_camaronero.png',
             // TODO: reemplazar por el PDF real del brochure del sector camaronero
             brochure: '',
@@ -154,7 +154,7 @@ export class ProjectsComponent {
             groups: [
                 {
                     id: 'manufactureras',
-                    title: 'Empresas manufactureras',
+                    title: 'Industrias',
                     subtitle: 'que confían en nosotros',
                     preview: 10,
                     logos: [
@@ -247,7 +247,7 @@ export class ProjectsComponent {
             groups: [
                 {
                     id: 'empresas-internacionales',
-                    title: 'Empresas',
+                    title: 'Empresas extranjeras',
                     subtitle: 'que confían en nosotros',
                     preview: 0,
                     logos: [
