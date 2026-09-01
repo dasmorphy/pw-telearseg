@@ -36,4 +36,8 @@ export class ZentinelComponent {
     this.activosIndex = index;
   }
 
+  openExternal(url: string): void {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
 }

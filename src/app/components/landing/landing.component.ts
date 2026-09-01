@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -23,10 +23,19 @@ export class LandingComponent {
   private interval: any;
 
   constructor(private router: Router) {}
+
+  @ViewChild('homeVideo')
+  homeVideo!: ElementRef<HTMLVideoElement>;
   
 
   ngOnInit(): void {
     this.startCarousel();
+  }
+
+  ngAfterViewInit(): void {
+    const video = this.homeVideo.nativeElement;
+    video.muted = true;
+    video.play().catch(console.error);
   }
 
   ngOnDestroy(): void {

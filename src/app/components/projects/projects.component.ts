@@ -271,7 +271,7 @@ export class ProjectsComponent {
     }
 
     navigateRoute(solution: any) {
-        const element = document.getElementById(solution.target);
+        const element = document.getElementById(solution);
 
         if (element) {
             element.scrollIntoView({

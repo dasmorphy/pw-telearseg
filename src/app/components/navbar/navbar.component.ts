@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
+import { Router } from '@angular/router';
 interface NavItem {
   label: string;
   route?: string;
@@ -27,6 +27,10 @@ export class NavbarComponent implements OnInit {
     { label: 'Contacto', href: '/contacto' }
   ];
 
+  constructor(
+  private router: Router
+) {}
+
   ngOnInit() {
     // Cerrar menú al hacer scroll
     window.addEventListener('scroll', () => {
@@ -34,11 +38,28 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
 
   closeMenu() {
     this.isMenuOpen = false;
   }
+
+  navigateTo(route: string): void {
+  this.closeMenu();
+
+  if (this.router.url === route) {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    return;
+  }
+
+  this.router.navigate([route]).then(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
 }

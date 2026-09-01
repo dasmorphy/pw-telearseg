@@ -130,6 +130,11 @@ export class ServiciosComponent {
     // Aquí iría la lógica para descargar el brochure
   }
 
+  navigateRoutes(route: string) {
+    this.router.navigate([route]);
+
+  }
+
   navigateRoute(solution: any) {
     if (solution.route) {
       this.router.navigate([solution.route]);

@@ -1,14 +1,6 @@
 <div class="zentinel-page">
     <app-navbar></app-navbar>
 
-    <section class="video-zentinel">
-        <div class="flex">
-            <video src="./assets/img/zentinel_intro.mp4" autoplay controls loop playsinline></video>
-
-        </div>
-    </section>
-
-
     <section class="zentinel-section">
 
         <div class="flex flex-column">
@@ -30,7 +22,7 @@
                                 Zentinel?
                             </span>
                         </h2>
-                        <p class="cctv-description text-justify">
+                        <p class="cctv-description" style="text-align: start;">
                             Plataforma digital que transforma
                             registros en información valiosa para
                             la toma de decisiones. La creación
@@ -67,23 +59,20 @@
                 </div>
 
                 <div class="showcase-bottom">
-                    <div class="mockup-wrap">
-                        <img src="./assets/img/mackbook_mockup.png" alt="Zentinel en MacBook">
-                    </div>
-                    <div class="tagline-card">
-                        <img class="tagline-logo" src="./assets/img/zentinel_logo.svg" alt="Zentinel">
-                        <p class="tagline-text">
-                            El siguiente<br />
-                            paso en la<br />
-                            <strong>seguridad<br />operativa</strong>
-                        </p>
-                    </div>
+                    <img src="./assets/img/mockup_seguridadoperativa.png" alt="Zentinel" />
                 </div>
 
             </div>
 
         </div>
 
+    </section>
+
+    <section class="video-zentinel">
+        <div class="flex">
+            <video src="./assets/img/zentinel_intro.mp4" autoplay controls loop playsinline></video>
+
+        </div>
     </section>
 
     <section class="sectors-section">
@@ -165,7 +154,7 @@
         <h2 class="cta-title">
             <span class="cta-title-top">Descubre como Zentinel puede transformar <span style="color: #10eec7;">tu operación</span>  </span>
         </h2>
-        <button type="button" class="cta-button">
+        <button type="button" class="cta-button" (click)="openExternal('https://wa.me/593990900046')">
             Agenda una demo
         </button>
         </div>

@@ -616,13 +616,14 @@
 .solutions-section {
     position: relative;
     z-index: 3;
-    min-height: 100vh;
+    min-height: 73vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     color: #ffffff;
     padding: 8rem 2rem 5rem;
+    padding-top: 0;
     background: #030814;
 }
 

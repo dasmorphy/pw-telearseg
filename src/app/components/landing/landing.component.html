@@ -1,6 +1,6 @@
 <div class="landing-page">
   <div class="video-container">
-    <video class="background-video" autoplay muted loop playsinline>
+    <video #homeVideo class="background-video" autoplay muted loop playsinline>
       <source src="./assets/videos/home.mp4" type="video/mp4" />
     </video>
   </div>
@@ -69,7 +69,7 @@
       </div>
     </div>
 
-    <button (click)="navigateRoute('/servicio')" class="btn btn-primary services-cta">Ver Más</button>
+    <button (click)="navigateRoute('/servicios')" class="btn btn-primary services-cta">Ver Más</button>
   </section>
 
   <!-- Zentinel -->
@@ -288,7 +288,7 @@
     <div class="projects-content">
       <h3 class="projects-subtitle">Conoce nuestros</h3>
       <h2 class="projects-title">PROYECTOS</h2>
-      <button class="btn btn-primary services-cta">Ver Más</button>
+      <button class="btn btn-primary services-cta" (click)="navigateRoute('/proyectos')">Ver Más</button>
 
       <!-- Indicadores -->
     </div>
@@ -338,7 +338,7 @@
         <img class="coverage-flags" src="./assets/img/banderas.png" alt="Banderas de cobertura" />
       </div>
 
-      <button class="btn about-cta">
+      <button class="btn about-cta" (click)="navigateRoute('/nosotros')">
         <span class="about-cta-top">Conoce Más</span>
         <span class="about-cta-bottom">Sobre Nosotros</span>
       </button>
@@ -351,24 +351,24 @@
 
     <div class="contact-content">
       <div class="contact-grid">
-        <div class="contact-card">
+        <a class="contact-card" href="https://wa.me/593990900046" target="_blank">
           <i class="pi pi-whatsapp contact-icon"></i>
           <p class="contact-main">+593 99 090 0046</p>
-        </div>
+        </a>
 
-        <div class="contact-card">
+        <a class="contact-card" href="https://www.google.com/maps/place/Telearseg+SAS/@-2.1612464,-79.9143974,17z/data=!3m1!4b1!4m5!3m4!1s0x41d3c8e9f1e2401b:0xd2750e3b45f4c143!8m2!3d-2.1612464!4d-79.9143974" target="_blank">
           <i class="pi pi-map-marker contact-icon"></i>
           <p class="contact-main">Urdesa Central</p>
           <p class="contact-sub">
             Av. Las Aguas 1111<br />
             entre Jiguas y Laureles
           </p>
-        </div>
+        </a>
 
-        <div class="contact-card">
+        <a class="contact-card" href="mailto:coordinadora.ventas@telearseg.net">
           <i class="pi pi-envelope contact-icon"></i>
           <p class="contact-main contact-email">coordinadora.ventas&#64;telearseg.net</p>
-        </div>
+        </a>
       </div>
 
     </div>
